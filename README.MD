@@ -26,12 +26,12 @@ been looking at/collecting older code from the proverbial 'dust bin'.
 
 Fandro became popular at several companies that I worked at ("It just works").
 I think at one time it became official allowed software at a large world
-wide consulting company. Thanks to the ones plugging for itit. Sorry - it stil 
-does not support 64-bit!
+wide consulting company. Thanks to the ones plugging for it. Sorry - it stil 
+does not support 64-bit (and it will most likely never...)
 
-Don't ask me how to compile it tho. I have no idea anymore and I'm not
-willing to open up my oldest Delphi compiler. I loved the language - and
-if you do still Delphi - power to you. I would recommend you'd take
+Don't ask me how to compile it. I have no idea anymore and I'm not
+ready and willing to open up my oldest Delphi compiler. I loved the language 
+- and if you do still Delphi - power to you. I would recommend you'd take
 on another language tho.
 
 
