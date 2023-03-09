@@ -39,9 +39,12 @@ Arthur (March 2023)
 
 And now the original 2005-2008 release notes with tips and tricks!
 
+<img
+src="images/fandro.png"
+raw=true
+alt="Fandro"
+/>
 
-
-[[images/fandro.png | Screenshot of Fandro]]
 
 
 RELEASENOTES
