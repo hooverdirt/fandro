@@ -1,0 +1,110 @@
+ItemProp Unit v3.54
+
+Description:
+  A unit to provide access to a file's context menu, properties dialog, and
+  default action. Given only a filename, the context menu or properties dialog
+  can be displayed, or the default action taken (i.e. Open).  This hides the
+  messy parts of using the Shell Namespace API.
+
+
+Contact Information:
+  The lateset version will always be available on the web at:
+    http://www.delphifreestuff.com
+  If you have any questions, comments or suggestions, please use the Delphi
+  Free Stuff Support Forum at:
+    http://www.delphifreestuff.com/discus/
+  If, for some reason, you can not use the web-based support forum, you can
+  email me at bstowers@delphifreestuff.com.  However, the support forum will
+  always take precedence over direct email since it provides a resource that
+  others can use when they have a problem.  Every message posted to the forum
+  is emailed directly to this account, so emailing me directly will not get
+  your message to me any faster.  It will only make the message less important
+  for me to respond to since only one person (you) is benefiting from it
+  instead of everyone interested.  Having said all that, please do email me
+  directly if it is regarding something that isn't really support related,
+  i.e. just to say thanks (as novel as that idea is).
+
+
+Credits:
+  * Many thanks to Matt Ginzton for his help with the multiple item support.  I
+    had been having no luck at all with it for a long time and he was kind
+    enough to provide me with working C++ code to translate.  Turns out my
+    attempts had been right all along, I simply had a parameter declared
+    incorrectly.  Still, I probably would have never found it without good,
+    working code to start from.
+
+
+Known Issues (bugs):
+  * The functions which take multiple files in a TStringList parameter will not
+    work unless they share a common directory (passed in the Directory param).
+    This means that as long as the files exist on the same drive, it will work
+    (the root of the common drive is the Directory param).  But, if the files
+    are on different drives, it will not work (passing '' in Directory).  I've
+    spent several hours trying to make it work, but have had no luck at all. 
+
+
+Revision History:
+3.54:  + Uninitialized var parameter was causing some things to fail (like
+         property dialogs for drives).
+       + Fixed a problem on Win2000 systems.
+       + Updated for Delphi 6 compatibility.
+3.53:  + Updated for C++Builder 5 compatibility.
+3.52:  + DisplayPropertiesDialog might not have worked on Windows 2000.  It
+         appears that one of the API calls involved isn't working correctly on
+         Win2K.  I've implemented a work-around.
+3.51:  + Had some problems with the Application.Hint code throwing range check
+         exceptions.  Think I've got it straightened out now.
+3.50:  + Daniel U. Thibault added the ability to set Application.Hint based on
+         the selected context menu item's verb (name) and help text.  The verb
+         is the short hint, the help text is the long hint.  See the updated
+         demo for an example of using this.  Very cool, and many thanks to him
+         for sharing.  Argh.  I've just discovered that Praful Kapadia also
+         sent me code to do the same thing.  Thanks to him as well.
+       + I've added two new boolean parameters to all of the DisplayContextMenu
+         functions:  ShowRename and RenameSelected.  ShowRename indicates
+         whether the Rename context menu item should be shown on the menu or
+         not.  RenameSelected is a var parameter that, upon return from the
+         function, indicates whether the user picked the rename function.  The
+         Rename menu item is special because the context menu has no idea how
+         to show user interface for renaming something, or even how to do it
+         (the thing may not be a file, it could be a virtual folder).  So,
+         it doesn't even attempt to handle the situation, you must.  Also,
+         ShowRename only cause the Rename item to appear on the context menu
+         if the item reports that it can be renamed (i.e. 'C:\' can not be
+         renamed, so the item wouldn't show up for it regardless of ShowRename's
+         value).
+3.12:  + Updated for C++Builder 4 compatibility.
+3.11:  + Under certain circumstances, trying to perform the default action on
+         a file that didn't have one could cause access violations.  Fixed.
+3.10:  + Added PeformVerb functions.  Allows you to peform any action that is
+         supported by the system.  For example, the properties dialog is
+         displayed by performing the verb 'properties'.  Other common verbs are
+         'delete', 'cut', 'copy', etc.
+3.00:  + Support for multiple items in all functions.  All items must be in the
+         same directory.
+         * The "normal" functions (those that take filenames) can now contain
+           wildcards.
+         * New "list" functions that operate like the "normal" functions, but
+           take a Path parameter and a TStringList of items in that directory
+           to operate on.
+         * The "PIDL" functions now require an extra parameter to indicate the
+           number of PIDLs being passed.  Simply pass the first PIDL in your
+           array as the PIDL parameter.
+2.21:  + Cut and Copy context menu commands now work properly on all
+         installations.  Many thanks to Matt Ginzton <magi@cs.stanford.edu> for
+         figuring this out and letting me know the solution (OLEInitialize).
+2.20:  + Rewrite for Delphi 4 compatibility and features (overloaded funcs). 
+       + Added support for IContextMenu3.                                    
+2.10:  + Added new versions of all functions that accept PIDLs instead of
+         filenames.  If you don't know what a PIDL is, then you don't need
+         these functions.  There useful when you are fooling around with the
+         Shell Namespace API functions.
+2.00:  + Send To menu now works.  Thanks to Matt Ginzton
+         (magi@cs.stanford.edu) for sending me C++ code snippet.
+1.03:  + Some code clean up.
+       + Really works with C++Builder now. Thanks again to Michael Trier.
+1.02:  + Small change for C++Builder compatibility.  Thanks to Michael Trier.
+1.01:  + Updated for Delphi 3 compatibility.
+       + Now works properly with drives.  Just pass something like C:\, but
+         NOT C:
+1.00:  + Initial release
