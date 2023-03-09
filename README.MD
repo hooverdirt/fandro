@@ -31,7 +31,7 @@ does not support 64-bit (and it will most likely never...)
 
 Don't ask me how to compile it. I have no idea anymore and I'm not
 ready and willing to open up my oldest Delphi compiler. I loved the language 
-- and if you do still Delphi - power to you. I would recommend you'd take
+and if you do still Delphi, power to you. I would recommend you'd take
 on another language tho.
 
 
