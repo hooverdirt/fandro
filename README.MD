@@ -41,7 +41,7 @@ And now the original 2005-2008 release notes with tips and tricks!
 
 
 
-[[https://github.com/hooverdirt/fandro/blob/main/images/fandro.png|Screenshot of Fandro]]
+[[images/fandro.png | Screenshot of Fandro]]
 
 
 RELEASENOTES
