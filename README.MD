@@ -56,13 +56,7 @@ that aren't free. Or ripped off 'light' versions of
 'professional' ones.
 
 Using Fandro should be straight forward. If you run into
-bugs, please e-mail me.
-
-arthur.hoogervorstNOSPAM@gmail.com (remove NOSPAM block).
-
-Fandro's official release site is at
-http://hoogervorst.ca/arthur. At this stage I'm considering
-open-sourcing Fandro.
+bugs, please e-mail me/message me.
 
 PLEASE DO NOT DISTRIBUTE THIS FILE WITHOUT THIS
 RELEASENOTES FILE. YOU ARE FREE TO DISTRIBUTE FANDRO
